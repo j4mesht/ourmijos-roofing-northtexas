@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
+import Logo from "./Logo";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,9 +23,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <h1 className="font-display text-xl sm:text-2xl font-bold text-primary-foreground">
-              Ourmijos Roofing
-            </h1>
+            <Logo 
+              size="md" 
+              variant="icon" 
+              className="h-20 w-auto brightness-0 invert"
+            />
           </Link>
 
           {/* Desktop Navigation */}

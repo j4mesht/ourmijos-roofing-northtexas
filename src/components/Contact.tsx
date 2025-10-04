@@ -22,7 +22,7 @@ const Contact = () => {
                 <Phone className="h-6 w-6 text-accent-foreground" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Call Us</h3>
-              <p className="text-primary-foreground/80">(XXX) XXX-XXXX</p>
+              <p className="text-primary-foreground/80">(505) 946-7814</p>
             </CardContent>
           </Card>
 
@@ -32,7 +32,7 @@ const Contact = () => {
                 <Mail className="h-6 w-6 text-accent-foreground" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Email Us</h3>
-              <p className="text-primary-foreground/80">info@ourmijos.com</p>
+              <p className="text-primary-foreground/80">ourmijosroofing@gmail.com </p>
             </CardContent>
           </Card>
 
