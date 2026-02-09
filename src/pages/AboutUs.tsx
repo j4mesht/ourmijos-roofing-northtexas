@@ -9,7 +9,7 @@ const AboutUs = () => {
       <Helmet>
         <title>About Us | Ourmijos Home Service - Your Trusted DFW Handyman</title>
         <meta name="description" content="Learn about Ourmijos Home Service. We are a locally owned, licensed, and insured home maintenance company dedicated to 100% customer satisfaction in North Texas." />
-        <link rel="canonical" href="https://j4mesht.github.io/ourmijos-roofing-northtexas/about" />
+        <link rel="canonical" href="https://our-mijos-home-service.netlify.app/about" />
       </Helmet>
 
       {/* Hero Section */}
@@ -42,7 +42,7 @@ const AboutUs = () => {
             {/* Image */}
             <div className="relative">
               <img
-                src="/ourmijos-roofing-northtexas/about-us.jpg"
+                src="/about-us.jpg"
                 alt="Ourmijos Roofing & Handyman LLC"
                 className="rounded-2xl shadow-2xl w-full object-cover"
               />

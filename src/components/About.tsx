@@ -15,7 +15,7 @@ const About = () => {
           {/* Left — Image */}
           <div className="relative order-2 lg:order-1">
             <img
-              src="/ourmijos-roofing-northtexas/about-us.jpg"
+              src="/about-us.jpg"
               alt="Ourmijos Roofing & Handyman LLC"
               className="rounded-2xl shadow-2xl w-full object-cover"
             />

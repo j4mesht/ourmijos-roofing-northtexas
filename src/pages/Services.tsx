@@ -26,7 +26,7 @@ const Services = () => {
       <Helmet>
         <title>Our Services | Handyman, Plumbing, Electrical & Remodeling - DFW</title>
         <meta name="description" content="Expert home maintenance services: General Repairs, Plumbing, Electrical, Painting, Drywall, Flooring, and Bathroom Remodels. Serving DFW & North Texas." />
-        <link rel="canonical" href="https://j4mesht.github.io/ourmijos-roofing-northtexas/services" />
+        <link rel="canonical" href="https://our-mijos-home-service.netlify.app/services" />
       </Helmet>
 
       {/* Hero Section */}

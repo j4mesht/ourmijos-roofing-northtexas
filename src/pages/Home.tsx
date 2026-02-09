@@ -59,7 +59,7 @@ const Home = () => {
       <Helmet>
         <title>Ourmijos Home Service | Handyman & Home Repairs in DFW</title>
         <meta name="description" content="Trusted local handyman services in DFW & North Texas. We specialize in home repairs, plumbing, electrical, painting, and remodeling. Licensed & insured." />
-        <link rel="canonical" href="https://j4mesht.github.io/ourmijos-roofing-northtexas/" />
+        <link rel="canonical" href="https://our-mijos-home-service.netlify.app/" />
       </Helmet>
 
       <Hero />
@@ -167,7 +167,7 @@ const Home = () => {
             >
               <input type="hidden" name="_subject" value="New Quote Request from Website" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://j4mesht.github.io/ourmijos-roofing-northtexas/" />
+              <input type="hidden" name="_next" value="https://our-mijos-home-service.netlify.app/" />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>

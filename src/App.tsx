@@ -9,7 +9,7 @@ import NotFound from "./pages/NotFound";
 
 const App = () => (
   <TooltipProvider>
-    <BrowserRouter basename="/ourmijos-roofing-northtexas">
+    <BrowserRouter>
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
