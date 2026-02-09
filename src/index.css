@@ -2,94 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 215 25% 15%;
+    --background: 180 14% 93%;       /* #EAEFEF ice gray */
+    --foreground: 205 26% 20%;       /* #25343F dark navy */
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card: 0 0% 100%;               /* white cards on ice bg */
+    --card-foreground: 205 26% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 205 26% 20%;
 
-    --primary: 215 40% 25%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 205 26% 20%;          /* #25343F dark navy */
+    --primary-foreground: 180 14% 93%;
 
-    --secondary: 215 20% 95%;
-    --secondary-foreground: 215 40% 25%;
+    --secondary: 207 16% 88%;        /* lighter tint of #BFC9D1 */
+    --secondary-foreground: 205 26% 20%;
 
-    --muted: 215 20% 96%;
-    --muted-foreground: 215 15% 50%;
+    --muted: 207 12% 90%;            /* soft slate tint */
+    --muted-foreground: 207 10% 45%;
 
-    --accent: 25 95% 53%;
+    --accent: 26 100% 66%;           /* #FF9B51 warm orange */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 20% 88%;
-    --input: 215 20% 88%;
-    --ring: 215 40% 25%;
+    --border: 207 14% 84%;           /* slate-tinted border */
+    --input: 207 14% 84%;
+    --ring: 205 26% 20%;
 
     --radius: 0.75rem;
-    
-    /* Custom design tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(215 40% 25%) 0%, hsl(215 50% 35%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(25 95% 60%) 100%);
-    --shadow-soft: 0 4px 20px -4px hsl(215 40% 25% / 0.1);
-    --shadow-strong: 0 10px 40px -10px hsl(215 40% 25% / 0.2);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 215 30% 12%;
-    --foreground: 0 0% 95%;
+    --background: 205 30% 8%;
+    --foreground: 180 14% 93%;
 
-    --card: 215 25% 16%;
-    --card-foreground: 0 0% 95%;
+    --card: 205 30% 12%;
+    --card-foreground: 180 14% 93%;
 
-    --popover: 215 30% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 205 30% 12%;
+    --popover-foreground: 180 14% 93%;
 
-    --primary: 0 0% 95%;
-    --primary-foreground: 215 40% 25%;
+    --primary: 180 14% 93%;
+    --primary-foreground: 205 26% 20%;
 
-    --secondary: 215 25% 20%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 205 25% 16%;
+    --secondary-foreground: 180 14% 93%;
 
-    --muted: 215 25% 20%;
-    --muted-foreground: 215 10% 60%;
+    --muted: 205 25% 18%;
+    --muted-foreground: 207 10% 55%;
 
-    --accent: 25 95% 53%;
+    --accent: 26 100% 66%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 25% 25%;
-    --input: 215 25% 25%;
-    --ring: 0 0% 95%;
+    --border: 205 25% 22%;
+    --input: 205 25% 22%;
+    --ring: 180 14% 93%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -107,6 +90,59 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
   }
+
+  /* Smooth scroll with offset for fixed nav */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+}
+
+@layer components {
+  /* Section pattern background */
+  .section-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Gradient text utility */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-amber-400;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Fade-in-up animation for scroll reveals */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  /* Stagger children delays */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
 }

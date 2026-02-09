@@ -25,7 +25,7 @@ const Logo = ({
   return (
     <img 
       src={logoImage} 
-      alt="Ourmijo's Roofing & Handyman LLC" 
+      alt="Ourmijos Home Service" 
       className={cn(sizeClasses[size], className)}
     />
   );

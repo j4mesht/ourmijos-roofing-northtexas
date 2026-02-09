@@ -1,117 +1,308 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2 } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { CheckCircle2, Phone, Search } from "lucide-react";
 import Contact from "@/components/Contact";
-
-const services = [
-  {
-    title: "Residential Roofing",
-    description: "Fix your commercial and residential roofing quickly and efficiently with help from our experienced staff of expert craftsman and women. Our comprehensive roofing services make sure that your old and weathered roof is restored to brand new.",
-    features: [
-      "New roof installation",
-      "Roof replacement",
-      "Repair and maintenance",
-      "Emergency roof repairs",
-      "Weatherproofing",
-    ],
-  },
-  {
-    title: "Commercial Roofing",
-    description: "When all you want to do is stop the leaks on your roof, call Ourmijos roofing now and save yourself a world of stress! Whether it is repairs, maintenance, or a brand new roof, we're the roofing contractor to guarantee the best possible job.",
-    features: [
-      "Flat roof systems",
-      "Commercial repairs",
-      "Roof coatings",
-      "Preventive maintenance",
-      "24/7 emergency service",
-    ],
-  },
-  {
-    title: "Tiles & Shingles Specialists",
-    description: "We are certified and qualified in all types of roofing. However, tiles and shingles are our specialties. We pride ourselves on providing each and every customer with the most exceptional service possible.",
-    features: [
-      "Clay tile roofing",
-      "Concrete tiles",
-      "Asphalt shingles",
-      "Architectural shingles",
-      "Custom tile work",
-    ],
-  },
-  {
-    title: "Roof Inspection & Leak Detection",
-    description: "If you have a lost of time and money almost certain that your top concern is leaking. Nobody wants to wake up to that dreaded feeling of a watermark or drip from their ceiling using their personal belongings.",
-    features: [
-      "Comprehensive inspections",
-      "Leak detection",
-      "Thermal imaging",
-      "Detailed reports",
-      "Prevention recommendations",
-    ],
-  },
-  {
-    title: "Roof Repair",
-    description: "When life spots leak some one ready for a new roof. However, in many cases this is not necessary, as do spot or major in spot the lost of time. Of running roofing and repairing someone in a roof should really be considered as a top option for your home.",
-    features: [
-      "Storm damage repair",
-      "Leak repairs",
-      "Flashing repairs",
-      "Ventilation repairs",
-      "Quick turnaround",
-    ],
-  },
-  {
-    title: "Emergency Services",
-    description: "We are insured and licensed meaning if your leak has caused any amount of damage to the inside of your home - we can fix it! This means drywall, carpentry, electrical issues – you name it. You would be hard pressed to find another roofing contractor to do the same.",
-    features: [
-      "24/7 availability",
-      "Rapid response",
-      "Temporary repairs",
-      "Full restoration",
-      "Insurance assistance",
-    ],
-  },
-];
+import { services } from "@/data/services";
+import PlaceholderImage from "@/components/PlaceholderImage";
 
 const Services = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
+
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Our Services | Handyman, Plumbing, Electrical & Remodeling - DFW</title>
+        <meta name="description" content="Expert home maintenance services: General Repairs, Plumbing, Electrical, Painting, Drywall, Flooring, and Bathroom Remodels. Serving DFW & North Texas." />
+        <link rel="canonical" href="https://j4mesht.github.io/ourmijos-roofing-northtexas/services" />
+      </Helmet>
+
       {/* Hero Section */}
-      <section className="bg-primary py-20 text-primary-foreground">
-        <div className="container px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-primary py-20 sm:py-28 text-primary-foreground overflow-hidden">
+        {/* Decorative blobs */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4" />
+
+        <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="font-display text-4xl sm:text-5xl font-bold mb-6">
-              Our Roofing Services
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+              Every Home Project, <br className="hidden sm:block" />
+              <span className="text-accent">Handled.</span>
             </h1>
-            <p className="text-xl text-primary-foreground/90">
-              Certified and qualified in all types of roofing. No job is too big or too small.
+            <p className="text-lg sm:text-xl text-primary-foreground/80 leading-relaxed max-w-2xl mx-auto">
+              With skilled craftsmen ready to go, Ourmijos Home Service is your single call for everything from quick fixes to full remodels.
             </p>
+          </div>
+        </div>
+
+        {/* Wave transition */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" preserveAspectRatio="none">
+            <path d="M0,64 C360,10 720,90 1440,40 L1440,80 L0,80 Z" fill="hsl(var(--background))" />
+          </svg>
+        </div>
+      </section>
+
+      {/* Full Services */}
+      <section className="py-16 sm:py-24 bg-background">
+        <div className="container px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground mb-3">
+              All Services
+            </h2>
+            <p className="text-muted-foreground max-w-lg mx-auto">
+              Everything we offer — no hidden surprises.
+            </p>
+          </div>
+
+          <div className="space-y-20">
+            {services.map((service, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <div
+                  key={service.id}
+                  id={service.id}
+                  className="scroll-mt-24"
+                >
+                  <div className={`grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start ${isEven ? "" : "lg:direction-rtl"}`}>
+                    {/* Before & After images — alternates sides */}
+                    <div className={`lg:col-span-2 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+                      {(service.id === "safety") ? (
+                        <div className="grid grid-cols-2 gap-3">
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}safety-one.jpg`}
+                              alt="Safety Installation"
+                              className="rounded-xl shadow-md w-full h-auto aspect-square object-cover"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}safety-two.jpg`}
+                              alt="Safety Installation"
+                              className="rounded-xl shadow-md ring-2 ring-accent/20 w-full h-auto aspect-square object-cover"
+                            />
+                          </div>
+                        </div>
+                      ) : (service.id === "carpentry") ? (
+                        <div className="grid grid-cols-2 gap-3">
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}capentry-before.jpg`}
+                              alt="Carpentry Before"
+                              className="rounded-xl shadow-md w-full h-auto aspect-square object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}capentry-after.jpg`}
+                              alt="Carpentry After"
+                              className="rounded-xl shadow-md ring-2 ring-accent/20 w-full h-auto aspect-square object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      ) : (service.id === "assembly" || service.id === "fencing") ? (
+                        <div className="grid grid-cols-2 gap-3">
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}${
+                                service.id === "assembly" ? "assembly-one.jpg" : "fences.jpg"
+                              }`}
+                              alt={service.id === "assembly" ? "Assembly Project" : "Fencing"}
+                              className="rounded-xl shadow-md w-full h-auto aspect-square object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}${
+                                service.id === "assembly" ? "assemby-two.jpg" : "deck.jpg"
+                              }`}
+                              alt={service.id === "assembly" ? "Assembly Project" : "Fencing"}
+                              className="rounded-xl shadow-md ring-2 ring-accent/20 w-full h-auto aspect-square object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      ) : (service.id === "electrical" || service.id === "bathroom" || service.id === "commercial") ? (
+                        <div className="grid grid-cols-2 gap-3">
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}${
+                                service.id === "electrical" ? "electrical-one.jpg" : 
+                                service.id === "bathroom" ? "bathroom-one.jpg" : 
+                                "commercial-one.jpg"
+                              }`}
+                              alt={service.id === "electrical" ? "Electrical Installation" : service.id === "bathroom" ? "Bathroom Remodel" : "Commercial Work"}
+                              className="rounded-xl shadow-md w-full h-auto aspect-square object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}${
+                                service.id === "electrical" ? "electrical-chandelier.jpg" : 
+                                service.id === "bathroom" ? "bathroom-remodeling.jpg" : 
+                                "commercial-two.jpg"
+                              }`}
+                              alt={service.id === "electrical" ? "Chandelier Installation" : service.id === "bathroom" ? "Bathroom Remodel" : "Commercial Work"}
+                              className="rounded-xl shadow-md ring-2 ring-accent/20 w-full h-auto aspect-square object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      ) : (service.id === "appliance" || service.id === "plumbing" || service.id === "moving") ? (
+                        <div className="grid grid-cols-2 gap-3">
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}${
+                                service.id === "appliance" ? "appliance-before.jpg" : 
+                                service.id === "plumbing" ? "plumbing-before.jpg" :
+                                "property-prep.jpg"
+                              }`}
+                              alt={`${service.title} Before`}
+                              className="rounded-xl shadow-md w-full h-auto aspect-square object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}${
+                                service.id === "appliance" ? "appliance-after.jpg" : 
+                                service.id === "plumbing" ? "plumbing-after.jpg" :
+                                "property-prep-two.jpg"
+                              }`}
+                              alt={`${service.title} After`}
+                              className="rounded-xl shadow-md ring-2 ring-accent/20 w-full h-auto aspect-square object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="grid grid-cols-2 gap-3">
+                          <div>
+                            {(service.id === "general-repairs" || service.id === "flooring" || service.id === "drywall" || service.id === "exterior" || service.id === "painting" || service.id === "windows-doors") ? (
+                              <img
+                                src={`${import.meta.env.BASE_URL}${
+                                  service.id === "general-repairs" ? "general-repair-before.jpg" :
+                                  service.id === "flooring" ? "floring-before.jpg" :
+                                  service.id === "drywall" ? "sheetrock-before.jpg" :
+                                  service.id === "exterior" ? "exterior-before.jpg" :
+                                  service.id === "painting" ? "painting-before.jpg" :
+                                  "windows-before.jpg"
+                                }`}
+                                alt={`${service.title} Before`}
+                                className="rounded-xl shadow-md w-full h-auto aspect-square object-cover"
+                                loading="lazy"
+                              />
+                            ) : (
+                              <PlaceholderImage
+                                label="Before"
+                                aspectRatio="portrait"
+                                className="rounded-xl shadow-md"
+                              />
+                            )}
+                          </div>
+                          <div>
+                            {(service.id === "general-repairs" || service.id === "flooring" || service.id === "drywall" || service.id === "exterior" || service.id === "painting" || service.id === "windows-doors") ? (
+                              <img
+                                src={`${import.meta.env.BASE_URL}${
+                                  service.id === "general-repairs" ? "general-repair-after.jpg" :
+                                  service.id === "flooring" ? "floring-after.jpg" :
+                                  service.id === "drywall" ? "sheetrock-after.jpg" :
+                                  service.id === "exterior" ? "exterior-after.jpg" :
+                                  service.id === "painting" ? "painting-after.jpg" :
+                                  "windows-after.jpg"
+                                }`}
+                                alt={`${service.title} After`}
+                                className="rounded-xl shadow-md ring-2 ring-accent/20 w-full h-auto aspect-square object-cover"
+                                loading="lazy"
+                              />
+                            ) : (
+                              <PlaceholderImage
+                                label="After"
+                                aspectRatio="portrait"
+                                className="rounded-xl shadow-md ring-2 ring-accent/20"
+                              />
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Content */}
+                    <div className={`lg:col-span-3 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
+                      {/* Category header */}
+                      <div className="flex items-center gap-2.5 mb-4">
+                        <service.icon className="h-6 w-6 text-accent flex-shrink-0" />
+                        <div>
+                          <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground leading-snug">
+                            {service.title}
+                          </h3>
+                        </div>
+                      </div>
+
+                      <p className="text-muted-foreground leading-relaxed mb-5">
+                        {service.description}
+                      </p>
+
+                      {/* All service items — no show more */}
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                        {service.items.map((item, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-sm py-0.5">
+                            <CheckCircle2 className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
+                            <span className="text-foreground">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Divider between categories (not after last) */}
+                  {index < services.length - 1 && (
+                    <div className="border-b border-border/60 mt-16" />
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-background">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all">
-                <CardHeader>
-                  <CardTitle className="font-display text-2xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
-                  <div className="space-y-3">
-                    {service.features.map((feature, fIndex) => (
-                      <div key={fIndex} className="flex items-start gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                        <span className="text-foreground">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+      {/* ─── "Don't see it?" CTA ─── */}
+      <section className="py-16 sm:py-20 bg-accent relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3" />
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/3 -translate-x-1/4" />
+
+        <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-2xl mx-auto text-center">
+            <Search className="h-10 w-10 text-white/80 mx-auto mb-4" />
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-4">
+              Don't See It on the List?
+            </h2>
+            <p className="text-white/90 mb-8 text-lg max-w-md mx-auto">
+              We handle more projects than we can list. Give us a call — chances are, we can help.
+            </p>
+            <a href="tel:5059467814">
+              <Button size="lg" className="rounded-full px-8 py-6 text-base bg-white text-accent hover:bg-white/90 shadow-xl font-bold">
+                <Phone className="mr-2 h-5 w-5" />
+                (505) 946-7814
+              </Button>
+            </a>
           </div>
         </div>
       </section>
