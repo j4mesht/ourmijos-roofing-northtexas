@@ -199,7 +199,7 @@ export const services: ServiceCategory[] = [
   {
     id: "moving",
     icon: Truck,
-    title: "Moving & Property Prep",
+    title: "Make Ready",
     description:
       "From furniture relocation to pre-sale repairs, we handle moves, rental turnovers, and punch-lists.",
     items: [

@@ -115,28 +115,24 @@ const Services = () => {
                             />
                           </div>
                         </div>
-                      ) : (service.id === "assembly" || service.id === "fencing") ? (
-                        <div className="grid grid-cols-2 gap-3">
-                          <div>
-                            <img
-                              src={`${import.meta.env.BASE_URL}${
-                                service.id === "assembly" ? "assembly-one.jpg" : "fences.jpg"
-                              }`}
-                              alt={service.id === "assembly" ? "Assembly Project" : "Fencing"}
-                              className="rounded-xl shadow-md w-full h-auto aspect-square object-cover"
-                              loading="lazy"
-                            />
-                          </div>
-                          <div>
-                            <img
-                              src={`${import.meta.env.BASE_URL}${
-                                service.id === "assembly" ? "assemby-two.jpg" : "deck.jpg"
-                              }`}
-                              alt={service.id === "assembly" ? "Assembly Project" : "Fencing"}
-                              className="rounded-xl shadow-md ring-2 ring-accent/20 w-full h-auto aspect-square object-cover"
-                              loading="lazy"
-                            />
-                          </div>
+                      ) : (service.id === "assembly") ? (
+                        <div className="w-full">
+                          <img
+                            src={`${import.meta.env.BASE_URL}assembly.jpg`}
+                            alt="Assembly Project"
+                            className="rounded-xl shadow-md w-full h-64 sm:h-72 object-cover object-center"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : service.id === "fencing" ? (
+                        <div className="w-full overflow-hidden rounded-xl shadow-md">
+                          <img
+                            src={`${import.meta.env.BASE_URL}fencing.jpg`}
+                            alt="Fencing Installation"
+                            className="w-full h-64 sm:h-72 object-cover scale-300"
+                            style={{ objectPosition: "center 40%" }}
+                            loading="lazy"
+                          />
                         </div>
                       ) : (service.id === "electrical" || service.id === "bathroom" || service.id === "commercial") ? (
                         <div className="grid grid-cols-2 gap-3">
@@ -192,19 +188,67 @@ const Services = () => {
                             />
                           </div>
                         </div>
+                      ) : service.id === "flooring" ? (
+                        <div className="w-full">
+                          <img
+                            src={`${import.meta.env.BASE_URL}flooring-installation.jpg`}
+                            alt="Flooring Installation"
+                            className="rounded-xl shadow-md w-full h-64 sm:h-72 object-cover"
+                            style={{ objectPosition: "center 85%" }}
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : service.id === "exterior" ? (
+                        <div className="w-full">
+                          <img
+                            src={`${import.meta.env.BASE_URL}powerwashing-exterior.jpg`}
+                            alt="Exterior Power Washing"
+                            className="rounded-xl shadow-md w-full h-64 sm:h-72 object-cover object-center"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : service.id === "drywall" ? (
+                        <div className="w-full">
+                          <img
+                            src={`${import.meta.env.BASE_URL}sheetrock-drywal-services.jpg`}
+                            alt="Drywall & Sheetrock Installation"
+                            className="rounded-xl shadow-md w-full h-64 sm:h-72 object-cover object-center"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : service.id === "painting" ? (
+                        <div className="w-full">
+                          <img
+                            src={`${import.meta.env.BASE_URL}painting-after.jpg`}
+                            alt="Painting Service"
+                            className="rounded-xl shadow-md w-full h-64 sm:h-72 object-cover object-center"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : service.id === "general-repairs" ? (
+                        <div className="w-full">
+                          <img
+                            src={`${import.meta.env.BASE_URL}general-repairs.jpg`}
+                            alt="General Repairs"
+                            className="rounded-xl shadow-md w-full h-64 sm:h-72 object-cover object-center"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : service.id === "kitchen" ? (
+                        <div className="w-full">
+                          <img
+                            src={`${import.meta.env.BASE_URL}kitchen-renovation.jpg`}
+                            alt="Kitchen Renovation"
+                            className="rounded-xl shadow-md w-full h-64 sm:h-72 object-cover object-center"
+                            loading="lazy"
+                          />
+                        </div>
                       ) : (
                         <div className="grid grid-cols-2 gap-3">
                           <div>
-                            {(service.id === "general-repairs" || service.id === "flooring" || service.id === "drywall" || service.id === "exterior" || service.id === "painting" || service.id === "windows-doors") ? (
+                            {(service.id === "windows-doors") ? (
                               <img
-                                src={`${import.meta.env.BASE_URL}${
-                                  service.id === "general-repairs" ? "general-repair-before.jpg" :
-                                  service.id === "flooring" ? "floring-before.jpg" :
-                                  service.id === "drywall" ? "sheetrock-before.jpg" :
-                                  service.id === "exterior" ? "exterior-before.jpg" :
-                                  service.id === "painting" ? "painting-before.jpg" :
-                                  "windows-before.jpg"
-                                }`}
+                                src={`${import.meta.env.BASE_URL}windows-before.jpg`}
                                 alt={`${service.title} Before`}
                                 className="rounded-xl shadow-md w-full h-auto aspect-square object-cover"
                                 loading="lazy"
@@ -218,16 +262,9 @@ const Services = () => {
                             )}
                           </div>
                           <div>
-                            {(service.id === "general-repairs" || service.id === "flooring" || service.id === "drywall" || service.id === "exterior" || service.id === "painting" || service.id === "windows-doors") ? (
+                            {(service.id === "windows-doors") ? (
                               <img
-                                src={`${import.meta.env.BASE_URL}${
-                                  service.id === "general-repairs" ? "general-repair-after.jpg" :
-                                  service.id === "flooring" ? "floring-after.jpg" :
-                                  service.id === "drywall" ? "sheetrock-after.jpg" :
-                                  service.id === "exterior" ? "exterior-after.jpg" :
-                                  service.id === "painting" ? "painting-after.jpg" :
-                                  "windows-after.jpg"
-                                }`}
+                                src={`${import.meta.env.BASE_URL}windows-after.jpg`}
                                 alt={`${service.title} After`}
                                 className="rounded-xl shadow-md ring-2 ring-accent/20 w-full h-auto aspect-square object-cover"
                                 loading="lazy"
