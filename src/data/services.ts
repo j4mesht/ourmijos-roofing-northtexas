@@ -201,9 +201,8 @@ export const services: ServiceCategory[] = [
     icon: Truck,
     title: "Make Ready",
     description:
-      "From furniture relocation to pre-sale repairs, we handle moves, rental turnovers, and punch-lists.",
+      "From furniture relocation to pre-sale repairs, rental turnovers, and punch-lists.",
     items: [
-      "Handle moves and furniture relocation",
       "Rental turnovers",
       "Pre-sale repairs and punch-lists",
       "Home inspection fixes",
