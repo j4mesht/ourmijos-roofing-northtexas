@@ -125,14 +125,24 @@ const Services = () => {
                           />
                         </div>
                       ) : service.id === "fencing" ? (
-                        <div className="w-full overflow-hidden rounded-xl shadow-md">
-                          <img
-                            src={`${import.meta.env.BASE_URL}fencing.jpg`}
-                            alt="Fencing Installation"
-                            className="w-full h-64 sm:h-72 object-cover scale-300"
-                            style={{ objectPosition: "center 40%" }}
-                            loading="lazy"
-                          />
+                        <div className="grid grid-cols-2 gap-3">
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}fencing.jpg`}
+                              alt="Fencing Installation"
+                              className="rounded-xl shadow-md w-full h-auto aspect-square object-cover scale-300"
+                              style={{ objectPosition: "center 40%" }}
+                              loading="lazy"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}fencing-two.jpg`}
+                              alt="Wood Fence Installation"
+                              className="rounded-xl shadow-md ring-2 ring-accent/20 w-full h-auto aspect-square object-cover"
+                              loading="lazy"
+                            />
+                          </div>
                         </div>
                       ) : (service.id === "electrical" || service.id === "bathroom" || service.id === "commercial") ? (
                         <div className="grid grid-cols-2 gap-3">
@@ -189,14 +199,24 @@ const Services = () => {
                           </div>
                         </div>
                       ) : service.id === "flooring" ? (
-                        <div className="w-full">
-                          <img
-                            src={`${import.meta.env.BASE_URL}flooring-installation.jpg`}
-                            alt="Flooring Installation"
-                            className="rounded-xl shadow-md w-full h-64 sm:h-72 object-cover"
-                            style={{ objectPosition: "center 85%" }}
-                            loading="lazy"
-                          />
+                        <div className="grid grid-cols-2 gap-3">
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}flooring-installation.jpg`}
+                              alt="Flooring Installation"
+                              className="rounded-xl shadow-md w-full h-auto aspect-square object-cover"
+                              style={{ objectPosition: "center 85%" }}
+                              loading="lazy"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}flooring-installation-two.jpg`}
+                              alt="Flooring Installation"
+                              className="rounded-xl shadow-md ring-2 ring-accent/20 w-full h-auto aspect-square object-cover"
+                              loading="lazy"
+                            />
+                          </div>
                         </div>
                       ) : service.id === "exterior" ? (
                         <div className="w-full">
@@ -235,13 +255,23 @@ const Services = () => {
                           />
                         </div>
                       ) : service.id === "kitchen" ? (
-                        <div className="w-full">
-                          <img
-                            src={`${import.meta.env.BASE_URL}kitchen-renovation.jpg`}
-                            alt="Kitchen Renovation"
-                            className="rounded-xl shadow-md w-full h-64 sm:h-72 object-cover object-center"
-                            loading="lazy"
-                          />
+                        <div className="grid grid-cols-2 gap-3">
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}kitchen-renovation.jpg`}
+                              alt="Kitchen Renovation"
+                              className="rounded-xl shadow-md w-full h-auto aspect-square object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}kitchen-renovation-two.jpg`}
+                              alt="Kitchen Renovation"
+                              className="rounded-xl shadow-md ring-2 ring-accent/20 w-full h-auto aspect-square object-cover"
+                              loading="lazy"
+                            />
+                          </div>
                         </div>
                       ) : (
                         <div className="grid grid-cols-2 gap-3">
