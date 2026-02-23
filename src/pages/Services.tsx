@@ -171,14 +171,13 @@ const Services = () => {
                             />
                           </div>
                         </div>
-                      ) : (service.id === "appliance" || service.id === "plumbing" || service.id === "moving") ? (
+                      ) : (service.id === "appliance" || service.id === "plumbing") ? (
                         <div className="grid grid-cols-2 gap-3">
                           <div>
                             <img
                               src={`${import.meta.env.BASE_URL}${
                                 service.id === "appliance" ? "appliance-before.jpg" : 
-                                service.id === "plumbing" ? "plumbing-before.jpg" :
-                                "property-prep.jpg"
+                                "plumbing-before.jpg"
                               }`}
                               alt={`${service.title} Before`}
                               className="rounded-xl shadow-md w-full h-auto aspect-square object-cover"
@@ -189,14 +188,22 @@ const Services = () => {
                             <img
                               src={`${import.meta.env.BASE_URL}${
                                 service.id === "appliance" ? "appliance-after.jpg" : 
-                                service.id === "plumbing" ? "plumbing-after.jpg" :
-                                "property-prep-two.jpg"
+                                "plumbing-after.jpg"
                               }`}
                               alt={`${service.title} After`}
                               className="rounded-xl shadow-md ring-2 ring-accent/20 w-full h-auto aspect-square object-cover"
                               loading="lazy"
                             />
                           </div>
+                        </div>
+                      ) : service.id === "moving" ? (
+                        <div className="w-full">
+                          <img
+                            src={`${import.meta.env.BASE_URL}make-ready.jpg`}
+                            alt="Make Ready Service"
+                            className="rounded-xl shadow-md w-full h-64 sm:h-72 object-cover object-center"
+                            loading="lazy"
+                          />
                         </div>
                       ) : service.id === "flooring" ? (
                         <div className="grid grid-cols-2 gap-3">
@@ -219,13 +226,23 @@ const Services = () => {
                           </div>
                         </div>
                       ) : service.id === "exterior" ? (
-                        <div className="w-full">
-                          <img
-                            src={`${import.meta.env.BASE_URL}powerwashing-exterior.jpg`}
-                            alt="Exterior Power Washing"
-                            className="rounded-xl shadow-md w-full h-64 sm:h-72 object-cover object-center"
-                            loading="lazy"
-                          />
+                        <div className="grid grid-cols-2 gap-3">
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}exterior-outdoor.jpeg`}
+                              alt="Exterior Outdoor Work"
+                              className="rounded-xl shadow-md w-full h-auto aspect-square object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={`${import.meta.env.BASE_URL}powerwashing-exterior.jpg`}
+                              alt="Exterior Power Washing"
+                              className="rounded-xl shadow-md ring-2 ring-accent/20 w-full h-auto aspect-square object-cover"
+                              loading="lazy"
+                            />
+                          </div>
                         </div>
                       ) : service.id === "drywall" ? (
                         <div className="w-full">
